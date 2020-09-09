@@ -19,6 +19,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 100
     container:
       image: alicevision/alicevision-deps:ci-2020.05.16-centos7-cuda9.0
     env:
