@@ -214,7 +214,7 @@ void hdrMerge::postProcessHighlight(const std::vector< image::Image<image::RGBfC
             {
                 if(highlightTarget > radianceColor(channel))
                 {
-                    radianceColor(channel) = clampingCompensation * highlightTarget + clampingCompensationInv * radianceColor(channel);
+                    radianceColor(channel) = std::min(65504.0f, float(clampingCompensation * highlightTarget + clampingCompensationInv * radianceColor(channel)));
                 }
             }
         }
